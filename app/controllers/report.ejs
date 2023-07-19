@@ -1,0 +1,117 @@
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        h3 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 20px;
+        }
+
+        th,
+        td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+
+        td {
+            color: #555;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .bold {
+            font-weight: bold;
+        }
+
+        .total {
+            margin-top: 20px;
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <h3 class="center">Cafe System</h3>
+    <table>
+        <tr>
+            <th class="bold">Name:</th>
+            <th class="bold">Email:</th>
+        </tr>
+        <tr>
+            <td>
+                <%= name %>
+            </td>
+            <td>
+                <%= email %>
+            </td>
+        </tr>
+        <tr>
+            <th class="bold">Contact Number:</th>
+            <th class="bold">Payment Method:</th>
+        </tr>
+        <tr>
+            <td>
+                <%= contactNumber %>
+            </td>
+            <td>
+                <%= paymentMethod %>
+            </td>
+        </tr>
+    </table>
+
+    <h3 class="center">Product Details</h3>
+    <table>
+        <tr>
+            <th class="bold">Name</th>
+            <th class="bold">Category</th>
+            <th class="bold">Quantity</th>
+            <th class="bold">Price</th>
+            <th class="bold">Sub Total</th>
+        </tr>
+        <% if(productDetails.length> 0) { %>
+            <% productDetails.forEach(product=> { %>
+                <tr>
+                    <td>
+                        <%= product.name %>
+                    </td>
+                    <td>
+                        <%= product.category %>
+                    </td>
+                    <td>
+                        <%= product.quantity %>
+                    </td>
+                    <td>
+                        <%= product.price %>
+                    </td>
+                    <td>
+                        <%= product.total %>
+                    </td>
+                </tr>
+                <% }); %>
+                    <% } %>
+    </table>
+
+    <h3 class="total">Total: <%= totalAmount %>
+    </h3>
+    <h3 class="center">Thank you for visiting. Please come again!</h3>
+</body>
+
+</html>
